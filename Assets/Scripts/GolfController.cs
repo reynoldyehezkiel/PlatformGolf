@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DragNShoot : MonoBehaviour
+public class GolfController : MonoBehaviour
 {
+    // Drag & Shoot
     public float power = 10f;
     public Rigidbody2D rb;
 
@@ -17,10 +18,18 @@ public class DragNShoot : MonoBehaviour
     Vector3 startPoint;
     Vector3 endPoint;
 
+    // Collectible Items
+    public int numChanceToHit = 5;
+    int currentChanceToHit;
+
     private void Start()
     {
+        // Drag & Shoot
         cam = Camera.main;
         tl = GetComponent<TrajectoryLine>();
+
+        // Collectible Items
+        currentChanceToHit = numChanceToHit;
     }
 
     private void Update()
@@ -53,5 +62,12 @@ public class DragNShoot : MonoBehaviour
             rb.AddForce(force * power, ForceMode2D.Impulse);
             tl.EndLine();
         }
+    }
+
+    // Change num of chance to hit the golf
+    public void ChangeChanceToHit(int amount)
+    {
+        currentChanceToHit = Mathf.Clamp(currentChanceToHit + amount, 0, numChanceToHit);
+        Debug.Log(currentChanceToHit + "/" + numChanceToHit);
     }
 }
