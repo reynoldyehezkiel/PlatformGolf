@@ -20,6 +20,7 @@ public class GolfController : MonoBehaviour
 
     // Collectible Items
     public int numChanceToHit = 5;
+    public int coin { get { return currentChanceToHit; } }
     int currentChanceToHit;
 
     private void Start()
@@ -65,7 +66,7 @@ public class GolfController : MonoBehaviour
     }
 
     // Change num of chance to hit the golf
-    public void ChangeChanceToHit(int amount)
+    public  void ChangeChanceToHit(int amount)
     {
         currentChanceToHit = Mathf.Clamp(currentChanceToHit + amount, 0, numChanceToHit);
         Debug.Log(currentChanceToHit + "/" + numChanceToHit);
