@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class CoinCollectible : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        GolfController controller = other.GetComponent<GolfController>();
 
-        if (controller != null)
+        if (collision.transform.tag == "Player")
         {
-            controller.ChangeChanceToHit(1);
+            // GolfController.ChangeChanceToHit(1);
+
+            if (gameObject.name == "Gold Coin")
+            {
+                GolfController.amountOfGoldCoin++;
+            }
+            else if(gameObject.name == "Blue Coin")
+            {
+                GolfController.amountOfBlueCoin+=5;
+            }
             Destroy(gameObject);
         }
     }

@@ -2017,7 +2017,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7908639401017827395, guid: 8add4dc74ecdd314cbda84ede938ebe2, type: 3}
       propertyPath: m_Name
-      value: Gold Coin (2)
+      value: Gold Coin
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8add4dc74ecdd314cbda84ede938ebe2, type: 3}
@@ -3431,7 +3431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7908639401017827395, guid: 8add4dc74ecdd314cbda84ede938ebe2, type: 3}
       propertyPath: m_Name
-      value: Gold Coin (1)
+      value: Gold Coin
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8add4dc74ecdd314cbda84ede938ebe2, type: 3}
@@ -3447,7 +3447,7 @@ GameObject:
   - component: {fileID: 838370617}
   - component: {fileID: 838370616}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Coin Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3467,10 +3467,10 @@ RectTransform:
   m_Father: {fileID: 1513178610}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -546.82, y: 219.95003}
-  m_SizeDelta: {x: 38.06, y: 48.8}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 46.179993, y: 219.95003}
+  m_SizeDelta: {x: 38.059998, y: 48.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &838370616
 MonoBehaviour:
@@ -3612,7 +3612,7 @@ GameObject:
   m_Component:
   - component: {fileID: 955682661}
   m_Layer: 0
-  m_Name: Collectible Items
+  m_Name: Coins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3764,7 +3764,7 @@ GameObject:
   - component: {fileID: 1513178608}
   - component: {fileID: 1513178607}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Coin UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3930,7 +3930,7 @@ GameObject:
   - component: {fileID: 2020952158}
   - component: {fileID: 2020952157}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Coin Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3950,10 +3950,10 @@ RectTransform:
   m_Father: {fileID: 1513178610}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -411.55005, y: 219.34999}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 180, y: -52.050003}
+  m_SizeDelta: {x: 200, y: 48.799988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2020952157
 MonoBehaviour:
@@ -3975,7 +3975,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: X0
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4207,21 +4207,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 722168282, guid: de889853555ea1947af12308100f069d, type: 3}
-      propertyPath: maxPower.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 722168282, guid: de889853555ea1947af12308100f069d, type: 3}
-      propertyPath: maxPower.y
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 722168282, guid: de889853555ea1947af12308100f069d, type: 3}
-      propertyPath: minPower.x
-      value: -6
-      objectReference: {fileID: 0}
-    - target: {fileID: 722168282, guid: de889853555ea1947af12308100f069d, type: 3}
-      propertyPath: minPower.y
-      value: -6
-      objectReference: {fileID: 0}
+      propertyPath: coinsText
+      value: 
+      objectReference: {fileID: 2020952157}
     - target: {fileID: 2097375508517772213, guid: de889853555ea1947af12308100f069d, type: 3}
       propertyPath: m_RootOrder
       value: 3

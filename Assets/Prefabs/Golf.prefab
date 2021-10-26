@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 722168283}
   m_Layer: 0
   m_Name: Golf
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,10 +138,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power: 3
   rb: {fileID: 2097375508517772211}
-  minPower: {x: -7, y: -7}
-  maxPower: {x: 7, y: 7}
+  minPower: {x: -6, y: -6}
+  maxPower: {x: 6, y: 6}
   tl: {fileID: 0}
   numChanceToHit: 5
+  coinsText: {fileID: 0}
 --- !u!120 &3289173711593320266
 LineRenderer:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GolfController : MonoBehaviour
 {
@@ -23,6 +24,11 @@ public class GolfController : MonoBehaviour
     public int coin { get { return currentChanceToHit; } }
     int currentChanceToHit;
 
+    public static int amountOfGoldCoin;
+    public static int amountOfBlueCoin;
+    int totalCoins;
+    public TextMeshProUGUI coinsText;
+
     private void Start()
     {
         // Drag & Shoot
@@ -35,6 +41,7 @@ public class GolfController : MonoBehaviour
 
     private void Update()
     {
+        // Drag & Shoot
         if (Input.GetMouseButtonDown(0))
         {
             startPoint = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -63,10 +70,14 @@ public class GolfController : MonoBehaviour
             rb.AddForce(force * power, ForceMode2D.Impulse);
             tl.EndLine();
         }
+
+        // Collectible Items
+        totalCoins = amountOfGoldCoin + amountOfBlueCoin;
+        coinsText.text = totalCoins.ToString();
     }
 
     // Change num of chance to hit the golf
-    public  void ChangeChanceToHit(int amount)
+    public void ChangeChanceToHit(int amount)
     {
         currentChanceToHit = Mathf.Clamp(currentChanceToHit + amount, 0, numChanceToHit);
         Debug.Log(currentChanceToHit + "/" + numChanceToHit);
