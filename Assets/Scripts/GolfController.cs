@@ -19,11 +19,10 @@ public class GolfController : MonoBehaviour
     Vector3 startPoint;
     Vector3 endPoint;
 
-    // Collectible Items
-    public int numChanceToHit = 5;
-    public int coin { get { return currentChanceToHit; } }
-    int currentChanceToHit;
+    public static int amountOfShot;
+    public TextMeshProUGUI shotsText;
 
+    // Collectible Items
     public static int amountOfGoldCoin;
     public static int amountOfBlueCoin;
     int totalCoins;
@@ -34,9 +33,6 @@ public class GolfController : MonoBehaviour
         // Drag & Shoot
         cam = Camera.main;
         tl = GetComponent<TrajectoryLine>();
-
-        // Collectible Items
-        currentChanceToHit = numChanceToHit;
     }
 
     private void Update()
@@ -68,18 +64,14 @@ public class GolfController : MonoBehaviour
                     startPoint.y - endPoint.y,
                     minPower.y, maxPower.y));
             rb.AddForce(force * power, ForceMode2D.Impulse);
+            amountOfShot++;
+            shotsText.text = amountOfShot.ToString();
             tl.EndLine();
         }
 
         // Collectible Items
+        // Change amount of total coints
         totalCoins = amountOfGoldCoin + amountOfBlueCoin;
         coinsText.text = totalCoins.ToString();
-    }
-
-    // Change num of chance to hit the golf
-    public void ChangeChanceToHit(int amount)
-    {
-        currentChanceToHit = Mathf.Clamp(currentChanceToHit + amount, 0, numChanceToHit);
-        Debug.Log(currentChanceToHit + "/" + numChanceToHit);
     }
 }

@@ -9,7 +9,6 @@ public class CoinCollectible : MonoBehaviour
 
         if (collision.transform.tag == "Player")
         {
-            // GolfController.ChangeChanceToHit(1);
 
             if (gameObject.name == "Gold Coin")
             {
