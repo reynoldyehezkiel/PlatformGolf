@@ -81,7 +81,8 @@ public class GolfController : MonoBehaviour
     {
         if (collision.tag == "FrameBorder")
         {
-            totalCoins = 0;
+            amountOfGoldCoin = 0;
+            amountOfBlueCoin = 0;
             amountOfShot = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
