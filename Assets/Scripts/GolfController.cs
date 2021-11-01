@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GolfController : MonoBehaviour
@@ -73,5 +74,16 @@ public class GolfController : MonoBehaviour
         // Change amount of total coints
         totalCoins = amountOfGoldCoin + amountOfBlueCoin;
         coinsText.text = totalCoins.ToString();
+    }
+
+    // When player go outside from scene
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "FrameBorder")
+        {
+            totalCoins = 0;
+            amountOfShot = 0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }
