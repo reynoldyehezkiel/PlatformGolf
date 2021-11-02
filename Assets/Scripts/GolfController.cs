@@ -84,7 +84,8 @@ public class GolfController : MonoBehaviour
             amountOfGoldCoin = 0;
             amountOfBlueCoin = 0;
             amountOfShot = 0;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            PlayerManager.isGameOver = true;
+            
         }
     }
 }
