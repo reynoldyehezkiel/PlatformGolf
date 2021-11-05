@@ -85,6 +85,7 @@ public class GolfController : MonoBehaviour
             amountOfBlueCoin = 0;
             amountOfShot = 0;
             PlayerManager.isGameOver = true;
+            gameObject.SetActive(false);
         }
     }
 }

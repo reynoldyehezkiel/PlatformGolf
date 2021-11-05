@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -24,5 +23,10 @@ public class PlayerManager : MonoBehaviour
         {
             gameOverScreen.SetActive(true);
         }
+    }
+
+    public void ReplayGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
