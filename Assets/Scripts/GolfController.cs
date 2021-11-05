@@ -93,6 +93,7 @@ public class GolfController : MonoBehaviour
         if (collision.tag == "Finish")
         {
             PlayerManager.isGameFinish = true;
+            gameObject.SetActive(false);
         }
     }
 }
