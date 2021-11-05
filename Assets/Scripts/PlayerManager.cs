@@ -6,9 +6,13 @@ public class PlayerManager : MonoBehaviour
     public static bool isGameOver;
     public GameObject gameOverScreen;
 
+    public static bool isGameFinish;
+    public GameObject gameFinishScreen;
+
     private void Awake()
     {
         isGameOver = false;
+        isGameFinish = false;
     }
     // Start is called before the first frame update
     void Start()

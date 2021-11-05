@@ -79,6 +79,7 @@ public class GolfController : MonoBehaviour
     // When player go outside from scene
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Game over condition
         if (collision.tag == "FrameBorder")
         {
             amountOfGoldCoin = 0;
@@ -86,6 +87,12 @@ public class GolfController : MonoBehaviour
             amountOfShot = 0;
             PlayerManager.isGameOver = true;
             gameObject.SetActive(false);
+        }
+
+        // Game finish condition
+        if (collision.tag == "Finish")
+        {
+            PlayerManager.isGameFinish = true;
         }
     }
 }
