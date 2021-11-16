@@ -7,11 +7,6 @@ using UnityEditor;
 
 public class MenuUIHandler : MonoBehaviour
 {
-    public void StartNew()
-    {
-        SceneManager.LoadScene(1);
-    }
-
     public void Exit()
     {
         #if UNITY_EDITOR
@@ -21,14 +16,24 @@ public class MenuUIHandler : MonoBehaviour
         #endif
     }
 
-    public void back()
+    public void BackToMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void StartNew()
+    {
+        SceneManager.LoadScene(1);
     }
 
     public void Stage1()
     {
         SceneManager.LoadScene(2);
+    }
+
+    public void BackToSelectStage()
+    {
+        SceneManager.LoadScene(1);
     }
 
 }
