@@ -9,6 +9,7 @@ public class ScoreManager : MonoBehaviour
 
     public void Setup(int score)
     {
+        gameObject.SetActive(true);
         coinScore.text = GolfController.totalCoins.ToString();
         shotScore.text = GolfController.totalShots.ToString();
     }
