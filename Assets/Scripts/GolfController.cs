@@ -94,6 +94,8 @@ public class GolfController : MonoBehaviour
         {
             PlayerManager.isGameFinish = true;
             gameObject.SetActive(false);
+            Destroy(coinsText);
+            Destroy(shotsText);
         }
     }
 }
