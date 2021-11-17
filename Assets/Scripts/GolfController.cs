@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 public class GolfController : MonoBehaviour
 {
@@ -22,12 +23,14 @@ public class GolfController : MonoBehaviour
 
     public static int amountOfShot;
     public TextMeshProUGUI shotsText;
+    public Image golfClubImage;
 
     // Collectible Items
     public static int amountOfGoldCoin;
     public static int amountOfBlueCoin;
     int totalCoins;
     public TextMeshProUGUI coinsText;
+    public Image coinImage;
 
     private void Start()
     {
@@ -85,8 +88,14 @@ public class GolfController : MonoBehaviour
             amountOfGoldCoin = 0;
             amountOfBlueCoin = 0;
             amountOfShot = 0;
+
             PlayerManager.isGameOver = true;
             gameObject.SetActive(false);
+
+            Destroy(coinsText);
+            Destroy(shotsText);
+            Destroy(coinImage);
+            Destroy(golfClubImage);
         }
 
         // Game finish condition
@@ -94,8 +103,11 @@ public class GolfController : MonoBehaviour
         {
             PlayerManager.isGameFinish = true;
             gameObject.SetActive(false);
+
             Destroy(coinsText);
             Destroy(shotsText);
+            Destroy(coinImage);
+            Destroy(golfClubImage);
         }
     }
 }
