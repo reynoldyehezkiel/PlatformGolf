@@ -26,7 +26,6 @@ public class GolfController : MonoBehaviour
     // Collectible Items
     public static int amountOfGoldCoin;
     public static int amountOfBlueCoin;
-    int totalCoins;
     public TextMeshProUGUI coinsText;
 
     private void Start()
@@ -72,7 +71,7 @@ public class GolfController : MonoBehaviour
 
         // Collectible Items
         // Change amount of total coints
-        totalCoins = amountOfGoldCoin + amountOfBlueCoin;
+        ScoreManager.totalCoins = amountOfGoldCoin + amountOfBlueCoin;
         coinsText.text = totalCoins.ToString();
     }
 
