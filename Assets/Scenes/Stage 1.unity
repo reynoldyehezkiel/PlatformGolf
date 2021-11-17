@@ -3797,13 +3797,14 @@ GameObject:
   - component: {fileID: 471984120}
   - component: {fileID: 471984122}
   - component: {fileID: 471984121}
+  - component: {fileID: 471984123}
   m_Layer: 5
   m_Name: Game Finish Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &471984120
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3868,6 +3869,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471984119}
   m_CullTransparentMesh: 1
+--- !u!114 &471984123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471984119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57f030a4371540b4ca3e827f74e32030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinScore: {fileID: 826369299}
+  shotScore: {fileID: 1456003624}
 --- !u!1 &524446719
 GameObject:
   m_ObjectHideFlags: 0
@@ -3958,7 +3973,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level Complete
+  m_text: Results
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4241,7 +4256,7 @@ GameObject:
   - component: {fileID: 826369300}
   - component: {fileID: 826369299}
   m_Layer: 5
-  m_Name: Coin Counter Text
+  m_Name: Coin Score Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5186,7 +5201,7 @@ GameObject:
   - component: {fileID: 1456003625}
   - component: {fileID: 1456003624}
   m_Layer: 5
-  m_Name: Shot Counter Text
+  m_Name: Shot Score Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
