@@ -21,14 +21,14 @@ public class GolfController : MonoBehaviour
     Vector3 startPoint;
     Vector3 endPoint;
 
-    public static int amountOfShot;
+    public static int totalShots;
     public TextMeshProUGUI shotsText;
     public Image golfClubImage;
 
     // Collectible Items
     public static int amountOfGoldCoin;
     public static int amountOfBlueCoin;
-    int totalCoins;
+    public static int totalCoins;
     public TextMeshProUGUI coinsText;
     public Image coinImage;
 
@@ -68,8 +68,8 @@ public class GolfController : MonoBehaviour
                     startPoint.y - endPoint.y,
                     minPower.y, maxPower.y));
             rb.AddForce(force * power, ForceMode2D.Impulse);
-            amountOfShot++;
-            shotsText.text = amountOfShot.ToString();
+            totalShots++;
+            shotsText.text = totalShots.ToString();
             tl.EndLine();
         }
 
@@ -87,7 +87,7 @@ public class GolfController : MonoBehaviour
         {
             amountOfGoldCoin = 0;
             amountOfBlueCoin = 0;
-            amountOfShot = 0;
+            totalShots = 0;
 
             PlayerManager.isGameOver = true;
             gameObject.SetActive(false);
@@ -101,6 +101,10 @@ public class GolfController : MonoBehaviour
         // Game finish condition
         if (collision.tag == "Finish")
         {
+            amountOfGoldCoin = 0;
+            amountOfBlueCoin = 0;
+            totalShots = 0;
+
             PlayerManager.isGameFinish = true;
             gameObject.SetActive(false);
 
