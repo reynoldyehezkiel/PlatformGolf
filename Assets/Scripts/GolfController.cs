@@ -10,17 +10,15 @@ public class GolfController : MonoBehaviour
     // Drag & Shoot
     public float power = 10f;
     public Rigidbody2D rb;
-
     public Vector2 minPower;
     public Vector2 maxPower;
-
     public TrajectoryLine tl;
-
     Camera cam;
     Vector2 force;
     Vector3 startPoint;
     Vector3 endPoint;
 
+    // Shots
     public static int totalShots;
     public TextMeshProUGUI shotsText;
     public Image golfClubImage;
@@ -31,6 +29,9 @@ public class GolfController : MonoBehaviour
     public static int totalCoins;
     public TextMeshProUGUI coinsText;
     public Image coinImage;
+
+    public static int tempShots;
+    public static int tempCoins;
 
     private void Start()
     {
@@ -101,6 +102,9 @@ public class GolfController : MonoBehaviour
         // Game finish condition
         if (collision.tag == "Finish")
         {
+            tempShots = totalShots;
+            tempCoins = totalCoins;
+
             amountOfGoldCoin = 0;
             amountOfBlueCoin = 0;
             totalShots = 0;
