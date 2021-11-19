@@ -41,20 +41,20 @@ public class PlayerManager : MonoBehaviour
 
     public void ReplayGame()
     {
-        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        
     }
 
     public void PauseGame()
     {
         Time.timeScale = 0;
+        GolfController.totalShots--;
         pauseMenuScreen.SetActive(true);
     }
 
     public void ResumeGame()
     {
         Time.timeScale = 1;
+        GolfController.totalShots--;
         pauseMenuScreen.SetActive(false);
     }
 
