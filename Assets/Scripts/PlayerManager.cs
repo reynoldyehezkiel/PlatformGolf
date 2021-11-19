@@ -15,6 +15,11 @@ public class PlayerManager : MonoBehaviour
 
     public GameObject Panel;
 
+    private void Start()
+    {
+        Time.timeScale = 1;
+    }
+
     private void Awake()
     {
         isGameOver = false;
@@ -36,7 +41,9 @@ public class PlayerManager : MonoBehaviour
 
     public void ReplayGame()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
     }
 
     public void PauseGame()

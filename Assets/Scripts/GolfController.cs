@@ -37,6 +37,10 @@ public class GolfController : MonoBehaviour
 
     private void Start()
     {
+        amountOfGoldCoin = 0;
+        amountOfBlueCoin = 0;
+        totalShots = 0;
+
         // Drag & Shoot
         cam = Camera.main;
         tl = GetComponent<TrajectoryLine>();
@@ -88,10 +92,6 @@ public class GolfController : MonoBehaviour
         // Game over condition
         if (collision.tag == "FrameBorder")
         {
-            amountOfGoldCoin = 0;
-            amountOfBlueCoin = 0;
-            totalShots = 0;
-
             PlayerManager.isGameOver = true;
             gameObject.SetActive(false);
 
@@ -106,10 +106,6 @@ public class GolfController : MonoBehaviour
         {
             tempShots = totalShots;
             tempCoins = totalCoins;
-
-            amountOfGoldCoin = 0;
-            amountOfBlueCoin = 0;
-            totalShots = 0;
 
             PlayerManager.isGameFinish = true;
             gameObject.SetActive(false);
