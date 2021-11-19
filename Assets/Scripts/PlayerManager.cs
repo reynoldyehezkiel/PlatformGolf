@@ -52,7 +52,6 @@ public class PlayerManager : MonoBehaviour
         Time.timeScale = 0;
         pauseButton.interactable = false;
         GolfController.canShoot = false;
-        GolfController.totalShots--;
         pauseMenuScreen.SetActive(true);
     }
 
