@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 
-public class MenuUIHandler : MonoBehaviour
+public class UIHandler : MonoBehaviour
 {
     public void Exit()
     {
