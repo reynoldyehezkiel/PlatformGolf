@@ -9,7 +9,6 @@ public class UIHandler : MonoBehaviour
 {
     public void Exit()
     {
-        DataManager.Instance.Save();
         #if UNITY_EDITOR
             EditorApplication.ExitPlaymode();
         #else
