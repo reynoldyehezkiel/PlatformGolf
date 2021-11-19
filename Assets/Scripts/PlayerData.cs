@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerData : MonoBehaviour
+public class PlayerData
 {
-    public string playerName;
-    public int coins;
-    public int shots;
+    public string playerName = "";
+    public int coins = 0;
+    public int shots = 0;
 }
