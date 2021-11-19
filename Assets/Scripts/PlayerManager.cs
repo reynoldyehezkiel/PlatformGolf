@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
@@ -8,6 +10,10 @@ public class PlayerManager : MonoBehaviour
 
     public static bool isGameFinish;
     public GameObject gameFinishScreen;
+
+    public GameObject pauseMenuScreen;
+
+    public GameObject Panel;
 
     private void Awake()
     {
@@ -31,5 +37,32 @@ public class PlayerManager : MonoBehaviour
     public void ReplayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+        pauseMenuScreen.SetActive(true);
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        pauseMenuScreen.SetActive(false);
+    }
+
+    public void OpenPopUpMessagePanel()
+    {
+        if (Panel != null)
+        {
+            Panel.SetActive(true);
+            StartCoroutine(HideUI(Panel, 1.5f));
+        }
+    }
+
+    IEnumerator HideUI(GameObject guiParentCanvas, float secondsToWait, bool show = false)
+    {
+        yield return new WaitForSeconds(secondsToWait);
+        guiParentCanvas.SetActive(show);
     }
 }
