@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class GolfController : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class GolfController : MonoBehaviour
 
     // Shots
     public static int totalShots;
+    public static bool canShoot;
     public TextMeshProUGUI shotsText;
     public Image golfClubImage;
 
@@ -40,44 +42,51 @@ public class GolfController : MonoBehaviour
         amountOfGoldCoin = 0;
         amountOfBlueCoin = 0;
         totalShots = 0;
+        canShoot = true;
 
         // Drag & Shoot
-        cam = Camera.main;
-        tl = GetComponent<TrajectoryLine>();
+        if (canShoot)
+        {
+            cam = Camera.main;
+            tl = GetComponent<TrajectoryLine>();
+        }
     }
 
     private void Update()
     {
         // Drag & Shoot
-        if (Input.GetMouseButtonDown(0))
+        if (canShoot)
         {
-            startPoint = cam.ScreenToWorldPoint(Input.mousePosition);
-            startPoint.z = 15;
-        }
+            if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+            {
+                startPoint = cam.ScreenToWorldPoint(Input.mousePosition);
+                startPoint.z = 15;
+            }
 
-        if (Input.GetMouseButton(0))
-        {
-            Vector3 currentPoint = cam.ScreenToWorldPoint(Input.mousePosition);
-            startPoint.z = 15;
-            tl.RenderLine(startPoint, currentPoint);
-        }
+            if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
+            {
+                Vector3 currentPoint = cam.ScreenToWorldPoint(Input.mousePosition);
+                startPoint.z = 15;
+                tl.RenderLine(startPoint, currentPoint);
+            }
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            endPoint = cam.ScreenToWorldPoint(Input.mousePosition);
-            endPoint.z = 15;
+            if (Input.GetMouseButtonUp(0) && !EventSystem.current.IsPointerOverGameObject())
+            {
+                endPoint = cam.ScreenToWorldPoint(Input.mousePosition);
+                endPoint.z = 15;
 
-            force = new Vector2(
-                Mathf.Clamp(
-                    startPoint.x - endPoint.x,
-                    minPower.x, maxPower.x),
-                Mathf.Clamp(
-                    startPoint.y - endPoint.y,
-                    minPower.y, maxPower.y));
-            rb.AddForce(force * power, ForceMode2D.Impulse);
-            totalShots++;
-            shotsText.text = totalShots.ToString();
-            tl.EndLine();
+                force = new Vector2(
+                    Mathf.Clamp(
+                        startPoint.x - endPoint.x,
+                        minPower.x, maxPower.x),
+                    Mathf.Clamp(
+                        startPoint.y - endPoint.y,
+                        minPower.y, maxPower.y));
+                rb.AddForce(force * power, ForceMode2D.Impulse);
+                totalShots++;
+                shotsText.text = totalShots.ToString();
+                tl.EndLine();
+            }
         }
 
         // Collectible Items

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -15,6 +16,8 @@ public class PlayerManager : MonoBehaviour
 
     public GameObject Panel;
 
+    public Button pauseButton;
+
     private void Start()
     {
         Time.timeScale = 1;
@@ -28,7 +31,7 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
-        if(isGameOver)
+        if (isGameOver)
         {
             gameOverScreen.SetActive(true);
         }
@@ -47,6 +50,8 @@ public class PlayerManager : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0;
+        pauseButton.interactable = false;
+        GolfController.canShoot = false;
         GolfController.totalShots--;
         pauseMenuScreen.SetActive(true);
     }
@@ -54,7 +59,8 @@ public class PlayerManager : MonoBehaviour
     public void ResumeGame()
     {
         Time.timeScale = 1;
-        GolfController.totalShots--;
+        pauseButton.interactable = true;
+        GolfController.canShoot = true;
         pauseMenuScreen.SetActive(false);
     }
 
