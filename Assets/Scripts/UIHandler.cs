@@ -36,14 +36,4 @@ public class UIHandler : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    // public void SaveClicked()
-    // {
-    //     DataManager.Instance.Save();
-    // }
-
-    // public void ChangeName(string text)
-    // {
-    //     DataManager.Instance.playerName.text = text;
-    // }
-
 }
