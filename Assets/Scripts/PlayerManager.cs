@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
@@ -9,18 +11,16 @@ public class PlayerManager : MonoBehaviour
     public static bool isGameFinish;
     public GameObject gameFinishScreen;
 
+    public GameObject pauseMenuScreen;
+
+    public GameObject Panel;
+
     private void Awake()
     {
         isGameOver = false;
         isGameFinish = false;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         if(isGameOver)
@@ -37,5 +37,32 @@ public class PlayerManager : MonoBehaviour
     public void ReplayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+        pauseMenuScreen.SetActive(true);
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        pauseMenuScreen.SetActive(false);
+    }
+
+    public void OpenPopUpMessagePanel()
+    {
+        if (Panel != null)
+        {
+            Panel.SetActive(true);
+            StartCoroutine(HideUI(Panel, 1.5f));
+        }
+    }
+
+    IEnumerator HideUI(GameObject guiParentCanvas, float secondsToWait, bool show = false)
+    {
+        yield return new WaitForSeconds(secondsToWait);
+        guiParentCanvas.SetActive(show);
     }
 }
