@@ -9,14 +9,9 @@ public class ScoreManager : MonoBehaviour
     public Text shotScore;
     public InputField playerName;
 
-    public DataManager dataManager;
-
     private void Start()
     {
-        dataManager.Load();
-        playerName.text = dataManager.data.playerName;
-        coinScore.text = dataManager.data.coins.ToString();
-        shotScore.text = dataManager.data.shots.ToString();
+        // dataManager.Load();
     }
 
     private void Update()
@@ -27,11 +22,11 @@ public class ScoreManager : MonoBehaviour
 
     public void ChangeName(string text)
     {
-        dataManager.data.playerName = text;
+        // dataManager.data.playerName = text;
     }
 
     public void ClickSave()
     {
-        dataManager.Save();
+        // dataManager.Save();
     }
 }

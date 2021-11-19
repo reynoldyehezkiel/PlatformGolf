@@ -9,10 +9,11 @@ public class UIHandler : MonoBehaviour
 {
     public void Exit()
     {
+        DataManager.Instance.Save();
         #if UNITY_EDITOR
             EditorApplication.ExitPlaymode();
         #else
-            Application.Quit(); // original code to quit Unity player
+        Application.Quit(); // original code to quit Unity player
         #endif
     }
 
@@ -35,5 +36,15 @@ public class UIHandler : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    // public void SaveClicked()
+    // {
+    //     DataManager.Instance.Save();
+    // }
+
+    // public void ChangeName(string text)
+    // {
+    //     DataManager.Instance.playerName.text = text;
+    // }
 
 }
