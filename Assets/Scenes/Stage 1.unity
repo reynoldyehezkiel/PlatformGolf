@@ -3393,6 +3393,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &699677745 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6892493093563536662, guid: 201b081f23b5e014dba9eb0167478910, type: 3}
+  m_PrefabInstance: {fileID: 6892493092996130897}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &729800557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5688818297725351159, guid: b187592c16b50004594dffa3e2e6d4d2, type: 3}
@@ -4644,6 +4649,10 @@ PrefabInstance:
       propertyPath: minPower.y
       value: -6
       objectReference: {fileID: 0}
+    - target: {fileID: 722168282, guid: de889853555ea1947af12308100f069d, type: 3}
+      propertyPath: pauseButton
+      value: 
+      objectReference: {fileID: 699677745}
     - target: {fileID: 722168282, guid: de889853555ea1947af12308100f069d, type: 3}
       propertyPath: golfClubImage
       value: 

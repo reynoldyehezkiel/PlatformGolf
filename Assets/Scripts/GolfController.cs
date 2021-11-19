@@ -23,7 +23,7 @@ public class GolfController : MonoBehaviour
     public TextMeshProUGUI shotsText;
     public Image golfClubImage;
 
-    public Button pauseButton;
+    public GameObject pauseButton;
 
     // Collectible Items
     public static int amountOfGoldCoin;
@@ -118,7 +118,7 @@ public class GolfController : MonoBehaviour
             Destroy(shotsText);
             Destroy(coinImage);
             Destroy(golfClubImage);
-            Destroy(pauseButton);
+            pauseButton.SetActive(false);
         }
     }
 }
