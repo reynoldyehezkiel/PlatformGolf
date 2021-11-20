@@ -30,6 +30,10 @@ public class UIHandler : MonoBehaviour
     {
         SceneManager.LoadScene(2);
     }
+    public void StageTwo()
+    {
+        SceneManager.LoadScene(3);
+    }
 
     public void BackToSelectStage()
     {

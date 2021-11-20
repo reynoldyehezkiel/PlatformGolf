@@ -773,8 +773,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 737380504}
-        m_TargetAssemblyTypeName: MenuUIHandler, Assembly-CSharp
-        m_MethodName: StageOne
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: StageTwo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
